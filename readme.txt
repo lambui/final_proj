@@ -1,3 +1,10 @@
+OOP FINAL PROJECT: Visualize sorting algorithms.
+
+--Quick sort: FINISHED
+--Insertion sort: NEEDED
+--Heap sort: NOT REALLY NEEDED
+
+
 FREEGLUTAPP
 -----------
 
@@ -6,7 +13,7 @@ using freeglut.
 
 Linux:
  - Type make to compile the application
- - The makefile will compile all .cpp files in the folder
+ - The makefile will compile all .acpp files in the folder
  - Edit the makefile to change the name of the executable
 
 Windows:
