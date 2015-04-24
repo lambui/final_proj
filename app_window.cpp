@@ -1,5 +1,6 @@
 
 # include <iostream>
+#include <cstdlib>
 #include <math.h> //for mergesort
 #include <climits> //for mergesort
 # include "app_window.h"
@@ -88,6 +89,10 @@ void AppWindow::handle ( const Event& e )
 			case '2':
 				cout << "2 is pressed" << endl;
 				merge(lam.stash, 0, lam.stash.size()-1);
+				break;
+
+			case '`':
+				loop();
 				break;
 
 			case 27: // Esc was pressed
@@ -458,6 +463,7 @@ void AppWindow::reset(vector<Rect*> &stash)
 	draw();
 }
 
+//change
 void AppWindow::change(vector<Rect*> &stash)
 {
 	stash.clear();
@@ -476,4 +482,48 @@ void AppWindow::change(vector<Rect*> &stash)
 	}
 	cout << endl;
 	draw();
+}
+
+void AppWindow::loop()
+{
+	float r = 0;
+	float b = 0;
+	float g = 0;
+
+	while(true)
+	{
+		lam.stash.clear();
+		lam1.clear();
+		initialize(100, lam1); //randomize 100 different heights
+
+		int i = 0;
+		float temp_x = beginX;
+		float temp_y = -0.5;
+		float temp_width = 0.01;
+		while(i < lam1.size())
+		{
+			lam.add(temp_x, temp_y, temp_width, lam1[i], r, g, b);
+			temp_x += (temp_width + distance);
+			i++;
+			
+			/*r += 0.1;
+			if(r >= 1) b += 0.1;
+			if(b >= 1) g += 0.1;
+			if(g >= 1)
+			{
+				r = 0;
+				b = 0;
+				g = 0;
+			}*/
+			r += (float) (rand()%100)/100;
+			b += (float) (rand()%100)/100;
+			g += (float) (rand()%100)/100;
+
+			if(r >= 1) r = (float) (rand()%100)/100;
+			if(b >= 1) b = (float) (rand()%100)/100;
+			if(g >= 1) g = (float) (rand()%100)/100;
+		}
+		draw();
+		wait(Time);
+	}
 }

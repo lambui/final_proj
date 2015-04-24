@@ -42,6 +42,9 @@ class AppWindow : public GlutWindow
 
     //change: change data set
     void change(vector<Rect*> &stash);
+
+    //egg
+    void loop();
  };
 
 #endif // APP_WINDOW_H
