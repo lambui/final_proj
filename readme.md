@@ -14,8 +14,8 @@ Running the program is simple; type `make`, then run `./glutapp`
 
 ##Operations
 -```Right Click
--```'Enter' or '1'    :	```quick sort
--```'2'    :	```merge sort
--```'0'    :	```return to unsorted state (same data)
--```'.'    :	```generate new data set
+-```'Enter' or '1'    :	quick sort
+-```'2'    :	merge sort
+-```'0'    :	return to unsorted state (same data)
+-```'.'    :	generate new data set
 
