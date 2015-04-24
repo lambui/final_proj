@@ -3,7 +3,6 @@
 #include <math.h>
 #include <algorithm>
 #include <cstdlib>
-#include <unistd.h> //for sleep()
 #include <ctime>
 #include "RectStash.h"
 
@@ -19,8 +18,6 @@ void initialize(int objCount, vector<float> &lam1)
 		lam1.push_back(input);
 		i++;
 	}
-
-	//quick(lam1, 0, lam1.size()-1);
 
 	i = 0;
 	while(i < lam1.size())

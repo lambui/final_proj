@@ -5,7 +5,7 @@ The program is a freeglut application that displays data and runs an algorithm t
 
 ##Progress
 - Quicksort: complete
-- Mergesort: working on it (Lam)
+- Mergesort: complete
 - Heapsort: not complete
 - Insertion sort: not complete
 
