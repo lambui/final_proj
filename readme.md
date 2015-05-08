@@ -6,8 +6,7 @@ The program is a freeglut application that displays data and runs an algorithm t
 ##Progress
 - Quicksort: complete
 - Mergesort: complete
-- Heapsort: not complete
-- Insertion sort: not complete
+- Insertion sort: complete
 
 ##How to run
 Running the program is simple; type `make`, then run `./glutapp`

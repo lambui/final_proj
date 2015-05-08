@@ -15,7 +15,6 @@ AppWindow::AppWindow ( const char* label, int x, int y, int w, int h )
 	offsety = 0;
 	addMenuEntry ( "Quick Sort", o0 );
 	addMenuEntry ( "Insertion Sort", o1 );
-	addMenuEntry ( "Heap Sort", o2 );
 	addMenuEntry ( "Merge Sort", o8 );
 	addMenuEntry ( "Reset", o3 );
 	addMenuEntry ( "NO DELAY", o4 );
@@ -91,6 +90,11 @@ void AppWindow::handle ( const Event& e )
 				merge(lam.stash, 0, lam.stash.size()-1);
 				break;
 
+			case '3':
+				cout << "3 is pressed" << endl;
+				insertion(lam.stash);
+				break;
+
 			case '`':
 				loop();
 				break;
@@ -113,10 +117,7 @@ void AppWindow::handle ( const Event& e )
 
 			case 1:
 				cout << "Insertion Sort" << endl;
-				break;
-
-			case 2:
-				cout << "Heap Sort" << endl;
+				insertion(lam.stash);
 				break;
 
 			case 3:
@@ -442,6 +443,55 @@ void AppWindow::merge(vector<Rect* > &A, int i, int j)
 		merge(A,i,q);
 		merge(A,q+1,j);
 		mergeSort(A,i,q,j);
+	}
+}
+
+//insertion sort
+void AppWindow::insertion(vector<Rect* > &A)
+{
+	int i = 0;
+	int j = 1;
+	for(j; j < A.size();j++)
+	{
+		float key = A[j]->height;
+		A[j]->r = 1;
+		A[j]->b = 1;
+		A[j]->g = 1;
+		draw();
+		wait(Time);
+
+		i = j-1;
+		while(i >= 0 && A[i]->height > key)
+		{
+			A[i]->r = 0.8;
+			A[i]->b = 0.2;
+			A[i]->g = 0.2;
+			
+			A[i+1]->height = A[i]->height;
+
+			A[i+1]->r = 0.8;
+			A[i+1]->b = 0.2;
+			A[i+1]->g = 0.2;
+			draw();
+			wait(Time);
+
+			if(A[i]->height > key)
+			{
+				A[i]->height = key;
+				A[i]->r = 1;
+				A[i]->b = 1;
+				A[i]->g = 1;
+				draw();
+				wait(Time);
+			}
+
+			i--;
+		}
+
+		A[i+1]->r = 0.8;
+		A[i+1]->b = 0.2;
+		A[i+1]->g = 0.2;
+		draw();
 	}
 }
 

@@ -37,6 +37,9 @@ class AppWindow : public GlutWindow
     void merge(vector<Rect*> &stash, int i, int j);
     void mergeSort(vector<Rect*> &stash, int p, int q, int r);
 
+    //insertion sort
+    void insertion(vector<Rect* > &A);
+
     //reset: reset back to unsorted vector (same set of data)
     void reset(vector<Rect*> &stash);
 
