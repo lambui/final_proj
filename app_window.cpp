@@ -17,6 +17,7 @@ AppWindow::AppWindow ( const char* label, int x, int y, int w, int h )
 	addMenuEntry ( "Insertion Sort", o1 );
 	addMenuEntry ( "Merge Sort", o8 );
 	addMenuEntry ( "Reset", o3 );
+	addMenuEntry ( "Change data set", o2);
 	addMenuEntry ( "NO DELAY", o4 );
 	addMenuEntry ( "Delay 5.0ms per step", o5 );
 	addMenuEntry ( "Delay 50.0ms per step", o6 );
@@ -118,6 +119,11 @@ void AppWindow::handle ( const Event& e )
 			case 1:
 				cout << "Insertion Sort" << endl;
 				insertion(lam.stash);
+				break;
+
+			case 2:
+				cout << "Change Data Set" << endl;
+				change(lam.stash);
 				break;
 
 			case 3:
